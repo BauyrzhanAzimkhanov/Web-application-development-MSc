@@ -1,0 +1,101 @@
+bauyrzhan@bauyrzhan-laptop:~/Desktop/web-dev/Web-application-development-MSc-/Assignment_2$ docker compose up
+[+] Running 2/0
+ ✔ Container assignment_2-postgres-1  Created                                                                                                              0.0s 
+ ✔ Container assignment_2-django-1    Recreated                                                                                                            0.0s 
+Attaching to django-1, postgres-1
+postgres-1  | 
+postgres-1  | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres-1  | 
+postgres-1  | 2024-10-11 14:18:16.365 UTC [1] LOG:  starting PostgreSQL 16.4 (Debian 16.4-1.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+postgres-1  | 2024-10-11 14:18:16.366 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1  | 2024-10-11 14:18:16.366 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1  | 2024-10-11 14:18:16.368 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2024-10-11 14:18:16.372 UTC [30] LOG:  database system was interrupted; last known up at 2024-10-10 11:52:06 UTC
+postgres-1  | 2024-10-11 14:18:16.891 UTC [30] LOG:  database system was not properly shut down; automatic recovery in progress
+postgres-1  | 2024-10-11 14:18:16.894 UTC [30] LOG:  redo starts at 0/19F39A0
+postgres-1  | 2024-10-11 14:18:16.895 UTC [30] LOG:  invalid record length at 0/19F4428: expected at least 24, got 0
+postgres-1  | 2024-10-11 14:18:16.895 UTC [30] LOG:  redo done at 0/19F43F0 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+postgres-1  | 2024-10-11 14:18:16.901 UTC [28] LOG:  checkpoint starting: end-of-recovery immediate wait
+postgres-1  | 2024-10-11 14:18:16.915 UTC [28] LOG:  checkpoint complete: wrote 8 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.005 s, total=0.016 s; sync files=7, longest=0.002 s, average=0.001 s; distance=2 kB, estimate=2 kB; lsn=0/19F4428, redo lsn=0/19F4428
+postgres-1  | 2024-10-11 14:18:16.922 UTC [1] LOG:  database system is ready to accept connections
+django-1    | Watching for file changes with StatReloader
+django-1    | Performing system checks...
+django-1    | 
+django-1    | System check identified no issues (0 silenced).
+django-1    | October 11, 2024 - 14:18:22
+django-1    | Django version 5.1.1, using settings 'django_project.settings'
+django-1    | Starting development server at http://0.0.0.0:8000/
+django-1    | Quit the server with CONTROL-C.
+django-1    | 
+django-1    | Not Found: /
+django-1    | [11/Oct/2024 14:18:28] "GET / HTTP/1.1" 404 2312
+django-1    | [11/Oct/2024 14:18:34] "GET /admin/ HTTP/1.1" 200 5852
+django-1    | [11/Oct/2024 14:18:34] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+django-1    | [11/Oct/2024 14:18:34] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+django-1    | [11/Oct/2024 14:18:34] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+django-1    | [11/Oct/2024 14:18:34] "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+django-1    | [11/Oct/2024 14:18:34] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+django-1    | [11/Oct/2024 14:18:34] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+django-1    | [11/Oct/2024 14:18:34] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+django-1    | [11/Oct/2024 14:18:34] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+django-1    | [11/Oct/2024 14:18:34] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+django-1    | [11/Oct/2024 14:20:53] "GET /admin/auth/user/ HTTP/1.1" 200 11051
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+django-1    | [11/Oct/2024 14:20:53] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+django-1    | [11/Oct/2024 14:20:53] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+django-1    | [11/Oct/2024 14:21:32] "GET /admin/auth/user/1/change/ HTTP/1.1" 200 21815
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/css/forms.css HTTP/1.1" 200 8710
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15502
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+django-1    | [11/Oct/2024 14:21:32] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+django-1    | [11/Oct/2024 14:21:37] "GET /admin/ HTTP/1.1" 200 5852
+django-1    | [11/Oct/2024 14:21:37] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:37] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+django-1    | [11/Oct/2024 14:21:42] "GET /blogs/ HTTP/1.1" 200 40
+
