@@ -1,1 +1,15 @@
-{{ task }}
+<div style="text-align: center; margin: 1em;font-size: larger; font-weight: bold;">{{ task }}</div>
+<div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px;">
+    <div style="padding: 0.2em;">Description: {{ task.description }}</div>
+    <div style="padding: 0.2em;">Creation time: {{ task.created_at }}</div>
+    <div style="padding: 0.2em;">Is it finished/completed?: {{ task.completed }}</div>
+</div>
+<div style="margin: auto; width: 50%; border: 3px solid orange; padding: 10px;">
+    <ul>
+        <li><a href="finish">Finish/complete task</a></li>
+        <li><a href="incomplete">Set task as incomplete</a></li>
+        <li><a href="delete">Delete task</a></li>
+        <li><a href="edit">Edit task</a></li>
+        <li><a href="..">Back</a></li>
+    </ul>
+</div>
