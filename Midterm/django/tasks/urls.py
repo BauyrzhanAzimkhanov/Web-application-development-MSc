@@ -9,6 +9,8 @@ urlpatterns = [
     path("<int:task_id>/", views.detail, name="detail"),
     # ex: /tasks/5/edit/
     path("<int:task_id>/edit/", views.edit, name="edit"),
+    # ex: /tasks/5/edited/
+    path("<int:task_id>/edited/", views.edited, name="edited"),
     # ex: /tasks/5/finish/
     path("<int:task_id>/finish/", views.finish, name="finish"),
     # ex: /tasks/5/incomplete/

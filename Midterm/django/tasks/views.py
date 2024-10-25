@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from django.http import HttpResponse
 from django.template import loader
@@ -44,12 +44,30 @@ def created(request):
             completed = True
         task = Task(title = title, description = description, created_at = timezone.now(), completed = completed)
         task.save()
-        return render(request, "tasks/detail.html", {"task": task})
+        redirect("/tasks/")
+
 
 def edit(request, task_id):
-    return HttpResponse("You're finished task %s." % task_id)
+    task = get_object_or_404(Task, pk=task_id)
+    return render(request, "tasks/task_form.html", {"task": task})
+
+def edited(request, task_id):
+    if request.method == "GET":
+        task = get_object_or_404(Task, pk=task_id)
+        task.title = request.GET.get("title")
+        task.description = request.GET.get("description")
+        completed = request.GET.get("completed")
+        if completed == None:
+            task.completed = False
+        else:
+            task.completed = True
+        # task = Task(title = title, description = description, created_at = timezone.now(), completed = completed)
+        task.save()
+        # return render(request, "tasks/detail.html", {"task": task})
+        return redirect("/tasks/")
 
 
 def delete(request, task_id):
-    return HttpResponse("You're finished task %s." % task_id)
-    
+    task = get_object_or_404(Task, pk=task_id)
+    task.delete()
+    return redirect("/tasks/")

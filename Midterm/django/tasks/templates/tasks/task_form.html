@@ -1,4 +1,5 @@
 <div>
+    {% if task == None %}
     <div style="text-align: center; margin: 1em;font-size: larger; font-weight: bold;">Create task</div>
     <div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px;">
         <form action="../created" method="GET">
@@ -16,4 +17,28 @@
             <input type="submit" name="submit" id="input_button_submit" value="Create task" style="margin: 1em">
         </form>
     </div>
+    {% else %}
+    <div style="text-align: center; margin: 1em;font-size: larger; font-weight: bold;">Create task</div>
+    <div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px;">
+        <form action="../edited" method="GET">
+            <label for="input_text_title">Title:</label><br>
+            <input type="text" name="title" id="input_text_title" value="{{ task.title }}"><br>
+            <label for="input_text_description">Description:</label><br>
+            <input type="text" name="description" id="input_text_description" value="{{ task.description }}"><br>
+            <label for="input_checkbox_completed">Is task completed?:</label><br>
+            {% if task.completed == True %}
+            <input type="checkbox" name="completed" id="input_checkbox_completed" checked><br>
+            {% else %}
+            <input type="checkbox" name="completed" id="input_checkbox_completed"><br>
+            {% endif %}
+            <!-- <select name="myIdList" id="myIdList">
+            {% for some_id in some_ids %}
+                <option value="{{ some_id }}">{{ some_id }}</option>
+            {% endfor %}
+            </select> -->
+            <input type="submit" name="submit" id="input_button_submit" value="Edit task" style="margin: 1em">
+        </form>
+    </div>
+    {% endif %}
+    
 </div>
