@@ -1,6 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import Http404
-from django.http import HttpResponse
 from django.template import loader
 from django.utils import timezone
 
@@ -60,9 +58,7 @@ def edited(request, task_id):
             task.completed = False
         else:
             task.completed = True
-        # task = Task(title = title, description = description, created_at = timezone.now(), completed = completed)
         task.save()
-        # return render(request, "tasks/detail.html", {"task": task})
         return redirect("/tasks/")
 
 
