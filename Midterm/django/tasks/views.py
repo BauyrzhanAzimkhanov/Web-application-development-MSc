@@ -44,8 +44,7 @@ def created(request):
             completed = True
         task = Task(title = title, description = description, created_at = timezone.now(), completed = completed)
         task.save()
-        redirect("/tasks/")
-
+        return redirect("/tasks/")
 
 def edit(request, task_id):
     task = get_object_or_404(Task, pk=task_id)
