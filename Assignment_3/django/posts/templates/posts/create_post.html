@@ -1,0 +1,13 @@
+<!-- templates/posts/create_post.html -->
+{% extends "posts/base.html" %}
+
+{% block content %}
+<h2 style="text-align: center; margin: 1em;">Create post</h1>
+<div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px;">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create post</button>
+    </form>
+</div>
+{% endblock %}

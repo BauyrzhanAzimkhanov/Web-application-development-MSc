@@ -1,0 +1,28 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Blog</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'posts/css/styles.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>My Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+        <footer>
+            <p>&copy; 2024 Assignment 3.</p>
+        </footer>
+    </body>
+</html>

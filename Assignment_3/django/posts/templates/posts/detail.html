@@ -1,0 +1,19 @@
+<!-- templates/posts/detail.html --> 
+{% extends "posts/base.html" %}
+
+{% block content %}
+<h2 style="text-align: center; margin: 1em;">{{ post.title }}</h1>
+<div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px;">
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width:600px;">
+    {% endif %}
+    <div style="padding: 0.2em;">Content: {{ post.content }}</div>
+    <div style="padding: 0.2em;">Author: {{ post.author }}</div>
+    <div style="padding: 0.2em;">Published date: {{ post.published_date }}</div>
+</div>
+<div style="margin: auto; width: 50%; border: 3px solid orange; padding: 10px;">
+    <ul>
+        <li><a href="/posts/{{ sub_domen }}/">Back</a></li>
+    </ul>
+</div>
+{% endblock %}

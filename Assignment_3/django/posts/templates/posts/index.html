@@ -1,0 +1,24 @@
+<!-- templates/posts/index.html -->
+{% extends "posts/base.html" %}
+
+{% block content %}
+<h2 style="text-align: center; margin: 1em;">Blog posts</h1>
+<div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px;">
+    {% if latest_posts_list %}
+        <ul>
+        {% for post in latest_posts_list %}
+            <li>
+                <h3><a href="/posts/{{ sub_domen }}/{{ post.id }}/">{{ post.title }}</a></h2>
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width:200px;">
+                {% endif %}
+                <p>Author: {{ post.author }}</p>
+                <p>Publication date: {{ post.published_date|date:"F j, Y" }}</p>
+            </li>
+        {% endfor %}
+        </ul>   
+    {% else %}
+        <p>No posts are available.</p>
+    {% endif %}
+</div>
+{% endblock %}
