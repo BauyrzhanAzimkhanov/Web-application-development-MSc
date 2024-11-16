@@ -15,8 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from django.conf.urls.static import static
+from django.conf import settings
+from rest_framework.authtoken.views import obtain_auth_token 
+from restfull_blogs_manager.swagger import schema_view
+
 
 urlpatterns = [
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+    path("", include("posts.urls")),
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

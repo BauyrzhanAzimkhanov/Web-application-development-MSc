@@ -32,7 +32,10 @@ ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    'drf_yasg',
     'rest_framework',
+    'rest_framework.authtoken',
+    'posts.apps.PostsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -104,6 +107,32 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = { 
+    'DEFAULT_AUTHENTICATION_CLASSES': [ 
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication', 
+    ],
+    'DEFAULT_THROTTLE_CLASSES': [ 
+        'rest_framework.throttling.AnonRateThrottle', 
+        'rest_framework.throttling.UserRateThrottle', 
+    ], 
+    'DEFAULT_THROTTLE_RATES': { 
+        'anon': '5/day',
+        'user': '100/day',
+    }
+} 
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    },
+    'USE_SESSION_AUTH': False,
+}
 
 
 # Internationalization
