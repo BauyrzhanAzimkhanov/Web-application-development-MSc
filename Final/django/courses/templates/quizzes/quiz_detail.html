@@ -1,0 +1,14 @@
+<!-- templates/quizzes/quiz_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ quiz.title }}</title>
+</head>
+<body>
+    <h1>{{ quiz.title }}</h1>
+    <p>Course: {{ quiz.course.title }}</p>
+    <p>Total Marks: {{ quiz.total_marks }}</p>
+    <a href="{% url 'quiz_update' quiz.id %}">Edit</a>
+    <a href="{% url 'quiz_delete' quiz.id %}">Delete</a>
+</body>
+</html>

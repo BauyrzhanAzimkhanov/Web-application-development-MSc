@@ -1,0 +1,15 @@
+<!-- templates/payments/payment_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Form</title>
+</head>
+<body>
+    <h1>Payment Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

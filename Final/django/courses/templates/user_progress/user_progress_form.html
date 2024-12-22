@@ -1,0 +1,15 @@
+<!-- templates/user_progress/user_progress_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Progress Form</title>
+</head>
+<body>
+    <h1>User Progress Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

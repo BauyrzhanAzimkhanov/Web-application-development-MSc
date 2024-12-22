@@ -1,0 +1,18 @@
+<!-- templates/enrollments/enrollment_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enrollment List</title>
+</head>
+<body>
+    <h1>Enrollment List</h1>
+    <a href="{% url 'enrollment_create' %}">Add New Enrollment</a>
+    <ul>
+        {% for enrollment in enrollments %}
+            <li>
+                <a href="{% url 'enrollment_detail' enrollment.id %}">Enrollment of {{ enrollment.user.username }} in {{ enrollment.course.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

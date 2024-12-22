@@ -1,0 +1,18 @@
+<!-- templates/reviews/review_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review List</title>
+</head>
+<body>
+    <h1>Review List</h1>
+    <a href="{% url 'review_create' %}">Add New Review</a>
+    <ul>
+        {% for review in reviews %}
+            <li>
+                <a href="{% url 'review_detail' review.id %}">Review by {{ review.user.username }} for {{ review.course.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- templates/quiz_questions/quiz_question_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ quiz_question.question_text }}</title>
+</head>
+<body>
+    <h1>{{ quiz_question.question_text }}</h1>
+    <p>Quiz: {{ quiz_question.quiz.title }}</p>
+    <p>Option A: {{ quiz_question.option_a }}</p>
+    <p>Option B: {{ quiz_question.option_b }}</p>
+    <p>Option C: {{ quiz_question.option_c }}</p>
+    <p>Option D: {{ quiz_question.option_d }}</p>
+    <p>Correct Option: {{ quiz_question.correct_option }}</p>
+    <a href="{% url 'quiz_question_update' quiz_question.id %}">Edit</a>
+    <a href="{% url 'quiz_question_delete' quiz_question.id %}">Delete</a>
+</body>
+</html>

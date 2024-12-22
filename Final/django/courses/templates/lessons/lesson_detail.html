@@ -1,0 +1,15 @@
+<!-- templates/lessons/lesson_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ lesson.title }}</title>
+</head>
+<body>
+    <h1>{{ lesson.title }}</h1>
+    <p>Course: {{ lesson.course.title }}</p>
+    <p>Content: {{ lesson.content }}</p>
+    <p>Video URL: {{ lesson.video_url }}</p>
+    <a href="{% url 'lesson_update' lesson.id %}">Edit</a>
+    <a href="{% url 'lesson_delete' lesson.id %}">Delete</a>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+services:
+  frontend-js:
+    build: frontend-js/.
+    ports:
+      - 80:80
+    depends_on:
+      django:
+        condition: service_healthy
+        restart: true
+    networks:
+      - net
+    volumes:
+      - ./frontend-js:/usr/share/nginx/html
+
+  django:
+    build: django/.
+    ports:
+      - 8000:8000
+    env_file: 
+      - ./django.env 
+    depends_on:
+      postgres:
+        condition: service_healthy
+        restart: true
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://0.0.0.0:8000/ || exit 1"]
+      interval: 10s
+      retries: 3
+      start_period: 30s
+      timeout: 10s
+    networks:
+      - net
+    volumes:
+      - ./django:/usr/src/app
+    
+  postgres:
+    image: postgres:16.4-bullseye
+    ports:
+      - 5432:5432
+    env_file: 
+      - ./postgres.env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bauyrzhan -d final"]
+      interval: 10s
+      retries: 3
+      start_period: 30s
+      timeout: 10s
+    networks:
+      - net
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+
+networks:
+  net:
+    driver: bridge

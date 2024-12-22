@@ -1,0 +1,16 @@
+<!-- templates/payments/payment_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Details</title>
+</head>
+<body>
+    <h1>Payment Details</h1>
+    <p>User: {{ payment.user.username }}</p>
+    <p>Amount: {{ payment.amount }}</p>
+    <p>Payment Date: {{ payment.payment_date }}</p>
+    <p>Status: {{ payment.status }}</p>
+    <a href="{% url 'payment_update' payment.id %}">Edit</a>
+    <a href="{% url 'payment_delete' payment.id %}">Delete</a>
+</body>
+</html>

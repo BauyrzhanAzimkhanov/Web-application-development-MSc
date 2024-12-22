@@ -1,0 +1,15 @@
+<!-- templates/lessons/lesson_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson Form</title>
+</head>
+<body>
+    <h1>Lesson Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

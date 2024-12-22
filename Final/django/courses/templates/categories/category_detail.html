@@ -1,0 +1,13 @@
+<!-- templates/categories/category_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category.name }}</title>
+</head>
+<body>
+    <h1>{{ category.name }}</h1>
+    <p>Description: {{ category.description }}</p>
+    <a href="{% url 'category_update' category.id %}">Edit</a>
+    <a href="{% url 'category_delete' category.id %}">Delete</a>
+</body>
+</html>

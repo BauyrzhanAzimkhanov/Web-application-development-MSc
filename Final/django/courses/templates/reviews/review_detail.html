@@ -1,0 +1,17 @@
+<!-- templates/reviews/review_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Details</title>
+</head>
+<body>
+    <h1>Review Details</h1>
+    <p>User: {{ review.user.username }}</p>
+    <p>Course: {{ review.course.title }}</p>
+    <p>Rating: {{ review.rating }}</p>
+    <p>Comment: {{ review.comment }}</p>
+    <p>Created At: {{ review.created_at }}</p>
+    <a href="{% url 'review_update' review.id %}">Edit</a>
+    <a href="{% url 'review_delete' review.id %}">Delete</a>
+</body>
+</html>

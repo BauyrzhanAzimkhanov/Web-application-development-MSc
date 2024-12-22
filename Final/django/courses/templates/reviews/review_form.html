@@ -1,0 +1,15 @@
+<!-- templates/reviews/review_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Form</title>
+</head>
+<body>
+    <h1>Review Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!-- templates/users/user_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ user.username }}</title>
+</head>
+<body>
+    <h1>{{ user.username }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Is Student: {{ user.is_student }}</p>
+    <p>Is Instructor: {{ user.is_instructor }}</p>
+    <a href="{% url 'user_update' user.id %}">Edit</a>
+    <a href="{% url 'user_delete' user.id %}">Delete</a>
+</body>
+</html>

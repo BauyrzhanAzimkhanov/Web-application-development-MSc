@@ -1,0 +1,18 @@
+<!-- templates/payments/payment_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment List</title>
+</head>
+<body>
+    <h1>Payment List</h1>
+    <a href="{% url 'payment_create' %}">Add New Payment</a>
+    <ul>
+        {% for payment in payments %}
+            <li>
+                <a href="{% url 'payment_detail' payment.id %}">Payment of {{ payment.amount }} by {{ payment.user.username }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

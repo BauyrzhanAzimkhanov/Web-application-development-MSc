@@ -1,0 +1,16 @@
+<!-- templates/user_progress/user_progress_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Progress Details</title>
+</head>
+<body>
+    <h1>User Progress Details</h1>
+    <p>User: {{ user_progress.user.username }}</p>
+    <p>Course: {{ user_progress.course.title }}</p>
+    <p>Completed Lessons: {{ user_progress.completed_lessons }}</p>
+    <p>Quiz Scores: {{ user_progress.quiz_scores }}</p>
+    <a href="{% url 'user_progress_update' user_progress.id %}">Edit</a>
+    <a href="{% url 'user_progress_delete' user_progress.id %}">Delete</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- templates/quiz_questions/quiz_question_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Question List</title>
+</head>
+<body>
+    <h1>Quiz Question List</h1>
+    <a href="{% url 'quiz_question_create' %}">Add New Quiz Question</a>
+    <ul>
+        {% for question in quiz_questions %}
+            <li>
+                <a href="{% url 'quiz_question_detail' question.id %}">{{ question.question_text }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

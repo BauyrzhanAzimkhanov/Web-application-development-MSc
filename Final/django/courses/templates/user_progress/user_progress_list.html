@@ -1,0 +1,18 @@
+<!-- templates/user_progress/user_progress_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Progress List</title>
+</head>
+<body>
+    <h1>User Progress List</h1>
+    <a href="{% url 'user_progress_create' %}">Add New Progress</a>
+    <ul>
+        {% for progress in user_progress_list %}
+            <li>
+                <a href="{% url 'user_progress_detail' progress.id %}">Progress of {{ progress.user.username }} in {{ progress.course.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

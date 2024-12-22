@@ -1,0 +1,16 @@
+<!-- templates/enrollments/enrollment_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enrollment Details</title>
+</head>
+<body>
+    <h1>Enrollment Details</h1>
+    <p>User: {{ enrollment.user.username }}</p>
+    <p>Course: {{ enrollment.course.title }}</p>
+    <p>Enrollment Date: {{ enrollment.enrollment_date }}</p>
+    <p>Status: {{ enrollment.status }}</p>
+    <a href="{% url 'enrollment_update' enrollment.id %}">Edit</a>
+    <a href="{% url 'enrollment_delete' enrollment.id %}">Delete</a>
+</body>
+</html>
